@@ -8,8 +8,11 @@ android {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "GGK-1.0"
+        //versionName "1.0"
+        ext.buildNumber = System.getenv("BUILD_NUMBER") ?: "dev"
+        versionName "0.1.$buildNumber"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "GGK-$versionName") 
     }
     buildTypes {
         release {
