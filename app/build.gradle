@@ -3,16 +3,13 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
-     def jenkinsBuild = System.getenv("BUILD_NUMBER") ?: "101010"
     defaultConfig {
         applicationId "com.thaneshdavuluri.dosakaya"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        //versionName "1.0.0"+JENKINS_BUILD_NUMBER
-        ext.buildNumber = System.getenv("BUILD_NUMBER") ?: "dev"
-        versionName "0.1.$buildNumber"
-       // testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionName "GGK-1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
