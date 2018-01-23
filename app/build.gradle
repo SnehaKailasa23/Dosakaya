@@ -8,10 +8,10 @@ android {
         applicationId "com.thaneshdavuluri.dosakaya"
         minSdkVersion 15
         targetSdkVersion 25
-        //versionCode 1
-        //versionName "1.0.0"
-        versionCode jenkinsBuild.toInteger()
-        versionName "1." + versionCode + "" 
+        versionCode 1
+        //versionName "1.0.0"+JENKINS_BUILD_NUMBER
+        ext.buildNumber = System.getenv("BUILD_NUMBER") ?: "dev"
+        versionName "0.1.$buildNumber"
        // testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
